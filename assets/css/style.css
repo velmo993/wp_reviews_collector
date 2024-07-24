@@ -1,0 +1,57 @@
+#ratingForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 150px;
+    padding: 0.8rem;
+    justify-content: space-evenly;
+    border: 1px solid #ccc;
+}
+
+#reviewForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+    justify-content: space-evenly;
+    border: 1px solid #ccc;
+}
+
+#reviewForm, #ratingForm {
+    max-width: 600px;
+    margin: 0 auto;
+}
+#reviewForm label, #ratingForm label {
+    display: block;
+    margin-bottom: 8px;
+}
+#reviewForm input, #reviewForm select, #reviewForm textarea,
+#ratingForm input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.star-rating {
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: #f5b301;
+    cursor: pointer;
+}
