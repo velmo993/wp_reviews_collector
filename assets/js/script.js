@@ -18,7 +18,6 @@ jQuery(document).ready(function($) {
         var rating = $('input[name="review_rating"]:checked').val();
         var formData = $(this).serialize();
         formData += '&action=submit_review';
-        formData += '&nonce=' + srcSettings.nonce;
         formData += '&review_rating=' + rating;
 
         $.ajax({

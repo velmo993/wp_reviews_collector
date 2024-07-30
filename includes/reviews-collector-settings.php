@@ -53,8 +53,8 @@ function src_options_page() {
             <p>
                 <label for="src_rating_input_type">Rating Input Type:</label>
                 <select id="src_rating_input_type" name="src_rating_input_type">
-                    <option value="dropdown" <?php selected(get_option('src_rating_input_type'), 'dropdown'); ?>>Dropdown</option>
                     <option value="stars" <?php selected(get_option('src_rating_input_type'), 'stars'); ?>>Stars</option>
+                    <option value="dropdown" <?php selected(get_option('src_rating_input_type'), 'dropdown'); ?>>Dropdown</option>
                 </select>
             </p>
             <br />

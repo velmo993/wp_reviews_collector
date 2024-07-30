@@ -72,11 +72,15 @@ function src_send_review_notification($review_data) {
     }
 
     $subject = 'New Review Submission - Less than 5 Stars';
-    $message = "A new review has been submitted:\n\n";
-    $message .= "Rating: " . intval($review_data['review_rating']) . " Stars\n";
-    $message .= "Review Text:\n" . esc_textarea($review_data['review_text']) . "\n\n";
-    $message .= "Reviewer Name: " . esc_html($review_data['reviewer_name']) . "\n";
-    $message .= "Reviewer Email: " . sanitize_email($review_data['reviewer_email']) . "\n";
+    // HTML Email Content
+    $message = '<html><body>';
+    $message .= '<h2>New Review Submission</h2>';
+    $message .= '<p><strong>Rating:</strong> ' . intval($review_data['review_rating']) . ' Stars</p>';
+    $message .= '<p><strong>Review Text:</strong></p>';
+    $message .= '<p>' . nl2br(esc_html($review_data['review_text'])) . '</p>';
+    $message .= '<p><strong>Reviewer Name:</strong> ' . esc_html($review_data['reviewer_name']) . '</p>';
+    $message .= '<p><strong>Reviewer Email:</strong> ' . sanitize_email($review_data['reviewer_email']) . '</p>';
+    $message .= '</body></html>';
 
     $headers = array(
         'Content-Type: text/html; charset=UTF-8',
